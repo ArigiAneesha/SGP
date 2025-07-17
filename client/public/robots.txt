@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sgp-electricalengineering.netlify.app/sitemap.xml
