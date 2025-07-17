@@ -1,0 +1,145 @@
+/* ========== Base Styles ========== */
+.help-section {
+  padding: 4rem 2rem;
+  background-color: #f0f8ff;
+  max-width: 1000px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.help-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #004aad;
+  margin-bottom: 1rem;
+}
+
+.intro-text {
+  text-align: center;
+  color: #555;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #003580;
+}
+
+.faq-question span {
+  font-size: 1.5rem;
+  color: #004aad;
+}
+
+.faq-answer {
+  margin-top: 0.75rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.service-list {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.service-list li {
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+/* Callout */
+.chat-hint {
+  margin-top: 2rem;
+  text-align: center;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #0077cc;
+}
+
+/* ========== Dark Mode ========== */
+body.dark-mode .help-section {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+body.dark-mode .faq-item {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+
+body.dark-mode .faq-question {
+  color: #ffd700;
+}
+
+body.dark-mode .faq-answer {
+  color: #ddd;
+}
+
+body.dark-mode .service-list li {
+  color: #bbb;
+}
+
+body.dark-mode .chat-hint {
+  color: #66b3ff;
+}
+
+/* ========== Responsive Styles ========== */
+@media (max-width: 768px) {
+  .help-section {
+    padding: 3rem 1rem;
+  }
+
+  .help-section h2 {
+    font-size: 2rem;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .faq-answer {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .help-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .help-section h2 {
+    font-size: 1.7rem;
+  }
+
+  .faq-question {
+    font-size: 0.95rem;
+  }
+
+  .faq-answer {
+    font-size: 0.9rem;
+  }
+}

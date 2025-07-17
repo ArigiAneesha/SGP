@@ -1,0 +1,137 @@
+/* Footer.css */
+
+.footer-container {
+    background: #1a1a2e;
+    color: #eaeaea;
+    padding: 50px 20px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    gap: 30px;
+  }
+  
+  .footer-brand {
+    flex: 1 1 250px;
+  }
+  
+  .footer-logo {
+    width: 80px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .brand-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 15px;
+  }
+  
+  .footer-socials a {
+    color: #f4a261;
+    font-size: 18px;
+    margin-right: 12px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-socials a:hover {
+    color: #ffffff;
+  }
+  
+  .footer-links,
+  .footer-contact {
+    flex: 1 1 180px;
+    color: #a0aec0;
+  }
+  
+  .footer-links h4,
+  .footer-contact h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #f4a261;
+  }
+  
+  .footer-links a,
+  .footer-contact a {
+    display: block;
+    margin: 6px 0;
+    text-decoration: none;
+    color: #a0aec0;
+    transition: color 0.3s ease;
+    font-size: 14px;
+  }
+  
+  .footer-links a:hover,
+  .footer-contact a:hover {
+    color: #ffffff;
+  }
+  
+  .footer-contact p {
+    margin: 6px 0;
+    font-size: 14px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #2c2c3a;
+    font-size: 13px;
+    color: #888;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .footer-brand,
+    .footer-links,
+    .footer-contact {
+      margin-bottom: 30px;
+    }
+  }
+  @media (max-width: 480px) {
+  .footer-container {
+    padding: 40px 15px 15px;
+  }
+
+  .footer-logo {
+    width: 60px;
+  }
+
+  .brand-description {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .footer-links h4,
+  .footer-contact h4 {
+    font-size: 16px;
+  }
+
+  .footer-links a,
+  .footer-contact a,
+  .footer-contact p {
+    font-size: 13px;
+  }
+
+  .footer-socials a {
+    font-size: 16px;
+    margin-right: 8px;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+  }
+}

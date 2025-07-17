@@ -1,0 +1,218 @@
+/* ========== Wrapper ========== */
+.skyline-wrapper {
+  width: 100%;
+  position: relative;
+  padding-top: 40px;
+  overflow: hidden;
+  margin-bottom: -1px;
+}
+
+/* ========== Sky Background ========== */
+.sky-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #87ceeb, #e6f4ff); /* Day */
+  transition: background 0.5s ease;
+  z-index: 0;
+}
+
+body.dark-mode .sky-background {
+  background: linear-gradient(to bottom, #010810, #1a1a2e); /* Night */
+}
+
+/* ========== Sun and Moon ========== */
+.sun, .moon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  z-index: 2;
+}
+
+.sun {
+  background: radial-gradient(circle, #ffd700, #fcd34d);
+  box-shadow: 0 0 20px #ffec99;
+}
+
+.moon {
+  background: #f1f1f1;
+  box-shadow: 0 0 15px #ccc;
+  display: none;
+}
+
+body.dark-mode .moon {
+  display: block;
+}
+
+body.dark-mode .sun {
+  display: none;
+}
+
+/* ========== Stars ========== */
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: twinkle 2s infinite ease-in-out;
+  z-index: 2;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* ========== Skyline Row ========== */
+.electrical-skyline {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 40px;
+  padding: 0 20px;
+  z-index: 3;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+/* ========== Power Tower ========== */
+.power-tower {
+  position: relative;
+  height: 130px;
+  width: 10px;
+}
+
+.power-tower .pole {
+  height: 100%;
+  width: 6px;
+  background: #be123c;
+  margin: auto;
+}
+
+.power-tower .line {
+  height: 2px;
+  background: #be123c;
+  position: absolute;
+  left: -20px;
+  right: -20px;
+}
+
+.power-tower .line.top { top: 30px; }
+.power-tower .line.middle { top: 60px; }
+.power-tower .line.bottom { top: 90px; }
+
+.power-tower .light {
+  width: 10px;
+  height: 10px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: blink 1.5s infinite alternate;
+}
+
+@keyframes blink {
+  0% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* ========== Buildings ========== */
+.building {
+  position: relative;
+  width: 40px;
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 6px;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+  align-content: flex-start;
+  transition: background 0.3s ease;
+}
+
+.tall { height: 140px; }
+.medium { height: 100px; }
+.short { height: 60px; }
+
+.blue { background-color: #2563eb; }
+.green { background-color: #059669; }
+.red { background-color: #dc2626; }
+.orange { background-color: #f97316; }
+
+/* ========== Windows ========== */
+.window {
+  width: 6px;
+  height: 8px;
+  margin: 2px;
+  background: #fff;
+  opacity: 0.8;
+  border-radius: 1px;
+}
+
+body.dark-mode .window {
+  background: #ffd700;
+  box-shadow: 0 0 3px #ffd700;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .electrical-skyline {
+    gap: 20px;
+  }
+  .sun, .moon {
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    right: 20px;
+  }
+  .building {
+    width: 30px;
+    padding: 4px;
+  }
+  .tall { height: 100px; }
+  .medium { height: 70px; }
+  .short { height: 50px; }
+  .window {
+    width: 4px;
+    height: 6px;
+    margin: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skyline-wrapper {
+    padding-top: 20px;
+  }
+  .electrical-skyline {
+    gap: 10px;
+    padding: 0 10px;
+  }
+  .sun, .moon {
+    width: 25px;
+    height: 25px;
+  }
+  .building {
+    width: 25px;
+    padding: 3px;
+  }
+  .tall { height: 80px; }
+  .medium { height: 60px; }
+  .short { height: 40px; }
+  .window {
+    width: 3px;
+    height: 5px;
+  }
+}

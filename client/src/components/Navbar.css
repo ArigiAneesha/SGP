@@ -1,0 +1,131 @@
+.navbar {
+  background-color: rgba(2, 29, 65, 0.85);
+  backdrop-filter: blur(4px);
+  color: white;
+  padding: 0rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1000;
+  position: relative; /* <--- Add this */
+
+}
+
+/* Remove sticky on small screens */
+@media (min-width: 769px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+  }
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navlogo {
+  border-radius: 50%;
+}
+
+.nav-title {
+  color: orange;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navbar li button {
+  position: relative;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0.5rem 0;
+}
+
+.navbar li button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.navbar li button:hover::after {
+  width: 100%;
+}
+
+.settings-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: orange;
+  transition: transform 0.3s;
+}
+
+.settings-icon:hover {
+  transform: rotate(90deg);
+}
+
+.navbar li button:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* Hamburger Icon Styles */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navbar ul.nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(2, 29, 65, 0.95);
+    padding: 1rem 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .navbar ul.nav-links.show {
+    display: flex;
+  }
+
+  .navbar ul.nav-links li {
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+
+  .settings-icon {
+    display: none; /* Hide settings icon on small screens or move it inside ul if needed */
+  }
+
+  .navbar.mobile-open .settings-icon {
+    display: block;
+    margin: 1rem auto 0;
+  }
+}
