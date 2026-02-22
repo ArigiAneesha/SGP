@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import './Home.css';
 
 import Services from './Services';
@@ -7,34 +7,24 @@ import Contact from './Contact';
 import Projects from './Projects';
 import Help from './Help';
 
-
-
 const Home = () => {
-
-  const servicesRef = useRef(null);
-  const ProjectRef = useRef(null);
-  const galleryRef = useRef(null);
-  const contactRef = useRef(null);
-  const homeRef = useRef(null);
-
   return (
     <>
-      <div className="home">
-        {/* Decorative angled shape */}
+      <div className="home" id="about">
         <div className="angled-background" />
-
         <img src="/logo.jpg" alt="Company Logo" className="logo" />
-        <h1>Welcome to <br></br>SGP Electrical & Engineering Works</h1>
-        <p>To be a global leader in electrical engineering by fostering sustainable and intelligent solutions</p>
+        <h1>Welcome to <br />SGP Electrical & Engineering Works</h1>
+        <p>
+          To be a global leader in electrical engineering by fostering sustainable
+          and intelligent solutions
+        </p>
       </div>
 
-      
-      <div ref={servicesRef}><Services /></div>
-      <div ref={galleryRef}><Gallery /></div>
-      <div ref={ProjectRef}><Projects /></div>  
-      <div ref={contactRef}><Contact /></div>
-      <div ref={homeRef}><Help /></div>
-      
+      <div id="services"><Services /></div>
+      <div id="gallery"><Gallery /></div>
+      <div id="projects"><Projects /></div>
+      <div id="contact"><Contact /></div>
+      <div id="help"><Help /></div>
     </>
   );
 };
