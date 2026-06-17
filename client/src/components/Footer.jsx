@@ -45,7 +45,7 @@ const Footer = () => {
           <p><a href="tel:+916303342931">+91 6303342931</a></p>
           <p><a href="tel:+917730022384">+91 7730022384</a></p>
           <p><a href="mailto:srigowriparameswaraelectrical@gmail.com">srigowriparameswaraelectrical@gmail.com</a></p>
-          <p>B,plot no:49 & 50, Room no. 403, 4th floor, Sai Balaji Cubicle,above green trends saloon, Raghavendra Colony, Kondapur, Telangana 500084</p>
+          <p>10-31 Yellapuvanipalem gopalapatnam, Visakhapatnam pin code 530027</p>
         </div>
 
       </div>

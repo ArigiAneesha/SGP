@@ -31,7 +31,7 @@ const Help = () => {
   },
   {
     question: "Where are you located?",
-    answer: "We are located in B, plot no:49 & 50, Room no. 403, 4th floor, Sai Balaji Cubicle, above Green Trends Saloon, Raghavendra Colony, Kondapur, Telangana 500084 and serve nearby areas."
+    answer: "We are located in 10-31 Yellapuvanipalem gopalapatnam, Visakhapatnam pin code 530027 and serve nearby areas."
   }
 ];
 

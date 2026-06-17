@@ -1,0 +1,124 @@
+.dashboard {
+  padding: 20px;
+  background: #f1f5f9;
+  min-height: 100vh;
+}
+
+/* 🔥 TOP CARDS */
+.top-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 16px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ICON */
+.card-icon {
+  font-size: 22px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+/* GRADIENTS */
+.gradient-blue {
+  background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+}
+
+.gradient-purple {
+  background: linear-gradient(135deg, #8b5cf6, #4c1d95);
+}
+
+.gradient-green {
+  background: linear-gradient(135deg, #22c55e, #166534);
+}
+
+.gradient-red {
+  background: linear-gradient(135deg, #ef4444, #7f1d1d);
+}
+
+/* TEXT */
+.card p {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.card h2 {
+  font-size: 26px;
+  margin-top: 5px;
+}
+
+/* 🔥 CHART GRID */
+.chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.donut-card,
+.line-card {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+/* DONUT */
+.donut-wrapper {
+  position: relative;
+  width: 220px;
+  margin: auto;
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  text-align: center;
+}
+
+/* 🔥 TABLE */
+.table-card {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  color: #64748b;
+  font-weight: 500;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  border-top: 1px solid #eee;
+}
+
+/* HOVER ROW */
+tbody tr:hover {
+  background: #f8fafc;
+}

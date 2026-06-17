@@ -1,106 +1,160 @@
-.home {
-  position: relative;
-  text-align: center;
-  padding: 6rem 1rem 4rem;
-  overflow: hidden;
-  background-color: white;
+/* ======= HOME SECTION ======= */
+
+.home{
+padding:30px 9%;
+background:#ffffff;
+position:relative;
+overflow:hidden;
+min-height:600px;
+
+/* FULL CAD GRID BACKGROUND */
+background-image:
+linear-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+background-size:70px 70px;
+background-position:center;
 }
 
-/* Slanted background */
-.angled-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 300px;
-  background-color: rgba(2, 29, 65, 0.85);
-  backdrop-filter: blur(4px);
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  z-index: 1;
+/* HERO CONTAINER */
+.home-container{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:50px;
 }
 
-/* Foreground content */
-.logo,
-.home h1,
-.home p {
-  position: relative;
-  z-index: 2;
+/* LEFT TEXT */
+.hero-text{
+flex:1.3;
 }
 
-.logo {
-  width: 200px;
-  height: auto;
-  margin-bottom: 1rem;
+.logo{
+width:140px;
+margin-bottom:20px;
 }
 
-.home h1 {
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #1a1a2e;
-  margin-bottom: 0.5rem;
+.hero-text h1{
+font-size:3rem;
+margin-bottom:20px;
+color:#1a1a2e;
 }
 
-.home p {
-  font-size: 1.2rem;
-  color: #444;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 0 1rem;
+/* COMPANY NAME IN ORANGE */
+.company-name{
+color:rgb(209, 0, 0);
 }
 
-/* ========== Dark Mode ========== */
-body.dark-mode .home {
-  background-color: #121212;
-  color: #f0f0f0;
+/* PARAGRAPH */
+.hero-text p{
+font-size:1.2rem;
+color:#555;
+margin-bottom:30px;
+max-width:500px;
 }
 
-body.dark-mode .home h1 {
-  color: #e0e0e0;
+/* BUTTONS */
+.hero-buttons{
+display:flex;
+gap:15px;
+margin-bottom:30px;
 }
 
-body.dark-mode .home p {
-  color: #ccc;
+.btn-primary{
+background:#1668c6;
+color:white;
+padding:12px 26px;
+border-radius:6px;
+text-decoration:none;
+font-weight:500;
 }
 
-body.dark-mode .angled-background {
-  background-color: rgba(20, 20, 20, 0.85);
+.btn-primary:hover{
+background:#005fcc;
 }
 
-/* ========== Responsive ========== */
-@media (max-width: 768px) {
-  .logo {
-    width: 150px;
-  }
-
-  .home h1 {
-    font-size: 2.2rem;
-  }
-
-  .home p {
-    font-size: 1rem;
-  }
-
-  .angled-background {
-    height: 220px;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-  }
+.btn-secondary{
+border:2px solid orange;
+padding:12px 26px;
+border-radius:6px;
+text-decoration:none;
+color:#0077ff;
 }
 
-@media (max-width: 480px) {
-  .logo {
-    width: 120px;
-  }
+.btn-secondary:hover{
+background:#0077ff;
+color:white;
+}
 
-  .home h1 {
-    font-size: 1.8rem;
-  }
+/* STATS */
+.hero-stats{
+display:flex;
+gap:40px;
+margin-top:20px;
+}
 
-  .home p {
-    font-size: 0.95rem;
-  }
+.hero-stats h3{
+font-size:28px;
+color:#0077ff;
+margin-bottom:5px;
+}
 
-  .angled-background {
-    height: 180px;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-  }
+.hero-stats p{
+font-size:14px;
+color:#777;
+}
+
+/* RIGHT IMAGE */
+.hero-image{
+flex:0.7;
+text-align:center;
+}
+
+.hero-image img{
+width:100%;
+max-width:420px;
+}
+
+/* DARK MODE */
+body.dark-mode .home{
+background-color:#121212;
+background-image:
+linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+}
+
+body.dark-mode .hero-text h1{
+color:#eee;
+}
+
+body.dark-mode .hero-text p{
+color:#ccc;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+.home-container{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text p{
+margin:auto;
+}
+
+.hero-buttons{
+justify-content:center;
+}
+
+.hero-stats{
+justify-content:center;
+}
+
+.hero-image{
+flex:1;
+}
+
+.hero-image img{
+max-width:300px;
+}
 }

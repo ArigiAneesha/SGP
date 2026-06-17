@@ -1,90 +1,220 @@
-import React, { useState, useEffect } from 'react';
-import './Contact.css';
-import contactImg from '../assets/contactImg.webp';
+import React, { useState } from "react";
+import API from "../services/api";
+import "./Contact.css";
+import contactImage from "../assets/contactImg.webp";
+
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { MdBusiness, MdEmail, MdAccessTime } from "react-icons/md";
+import { FiPhone } from "react-icons/fi";
+import { BsTools } from "react-icons/bs";
 
 const Contact = () => {
+
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    serviceType: "",
+    companyName: "",
+    officialEmail: "",
+    phoneNumber: "",
+    officeAddress: "",
+    workingHours: "",
+    message: "",
   });
 
-  const [showContent, setShowContent] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => setShowContent(true), 200); // animation trigger
-  }, []);
+  const [loading, setLoading] = useState(false);
+  const [popup, setPopup] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Thank you, ${formData.name}! Your message has been received.`);
-    setFormData({ name: '', email: '', message: '' });
+
+    setLoading(true);
+
+    try {
+
+      await API.post("/contact/submit", formData);
+
+      setPopup(true);
+
+      setTimeout(() => {
+        setPopup(false);
+      }, 3000);
+
+      setFormData({
+        serviceType: "",
+        companyName: "",
+        officialEmail: "",
+        phoneNumber: "",
+        officeAddress: "",
+        workingHours: "",
+        message: "",
+      });
+
+    } catch (error) {
+      console.error(error);
+    }
+
+    setLoading(false);
   };
 
   return (
-    <section id="contact" className={`contact-section ${showContent ? 'fade-in' : ''}`}>
-      <div className="contact-container">
-        {/* Left: Form + Info */}
-        <div className="contact-left">
-          <h2 className="section-title">Contact Us</h2>
-          <p className="subtitle">We'd love to hear from you!</p>
 
-          <div className="contact-info">
-            <p><strong>Company:</strong> Sri Gowri Parameswara Electrical & Engineering Works</p><br></br>
-            <p><strong>Phone:</strong> +91 6303342931, 7730022384</p><br></br>
-            <p><strong>Email:</strong> srigowriparameswaraelectrical@gmail.com</p><br></br>
-            <p><strong>Address:</strong> B, Plot No:49 & 50, Room No. 403, 4th Floor, Sai Balaji Cubicle, Kondapur, Telangana 500084</p><br></br>
-            <p><strong>Hours:</strong> Mon - Sat, 9:00 AM – 6:00 PM</p>
-          </div>
+    <div className="contact-page">
 
-          {/* <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-group">
+      {/* SUCCESS POPUP */}
+      {popup && (
+        <div className="success-popup">
+          ✔ Service request submitted successfully
+        </div>
+      )}
+
+      <h1 className="contact-title">Contact Us</h1>
+
+      <p className="contact-subtitle">
+        We would love to hear about your project
+      </p>
+
+      {/* CONTACT INFO */}
+      <div className="contact-info">
+
+        <div className="info-card">
+          <FaMapMarkerAlt className="info-icon" />
+          <h3>Address</h3>
+          <p>Rajahmundry, Andhra Pradesh</p>
+        </div>
+
+        <div className="info-card">
+          <FaPhoneAlt className="info-icon" />
+          <h3>Phone</h3>
+          <p>+91 9876543210</p>
+        </div>
+
+        <div className="info-card">
+          <FaEnvelope className="info-icon" />
+          <h3>Email</h3>
+          <p>support@company.com</p>
+        </div>
+
+      </div>
+
+      {/* FORM SECTION */}
+      <div className="contact-wrapper">
+
+        <div className="contact-image">
+          <img src={contactImage} alt="contact" />
+        </div>
+
+        <form className="contact-form" onSubmit={handleSubmit}>
+
+          <div className="grid">
+
+            {/* ✅ UPDATED SERVICE TYPE INPUT */}
+            <div className="input-group">
+              <BsTools className="input-icon" />
               <input
                 type="text"
-                name="name"
-                required
-                value={formData.name}
+                name="serviceType"
+                placeholder="Service Type"
+                value={formData.serviceType}
                 onChange={handleChange}
+                required
               />
-              <label>Your Name</label>
             </div>
 
-            <div className="form-group">
+            <div className="input-group">
+              <MdBusiness className="input-icon" />
+              <input
+                type="text"
+                name="companyName"
+                placeholder="Company Name"
+                value={formData.companyName}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="input-group">
+              <MdEmail className="input-icon" />
               <input
                 type="email"
-                name="email"
-                required
-                value={formData.email}
+                name="officialEmail"
+                placeholder="Official Email"
+                value={formData.officialEmail}
                 onChange={handleChange}
+                required
               />
-              <label>Your Email</label>
             </div>
 
-            <div className="form-group">
-              <textarea
-                name="message"
-                required
-                rows="4"
-                value={formData.message}
+            <div className="input-group">
+              <FiPhone className="input-icon" />
+              <input
+                type="text"
+                name="phoneNumber"
+                placeholder="Phone Number"
+                value={formData.phoneNumber}
                 onChange={handleChange}
-              ></textarea>
-              <label>Your Message</label>
+                required
+              />
             </div>
 
-            <button type="submit">Send Message</button>
-          </form> */}
-        </div>
+            <div className="input-group">
+              <FaMapMarkerAlt className="input-icon" />
+              <input
+                type="text"
+                name="officeAddress"
+                placeholder="Office Address"
+                value={formData.officeAddress}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-        {/* Right: Image */}
-        <div className="contact-right">
-          <img src={contactImg} alt="Contact" />
-        </div>
+            <div className="input-group">
+              <MdAccessTime className="input-icon" />
+              <input
+                type="text"
+                name="workingHours"
+                placeholder="Working Hours"
+                value={formData.workingHours}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <textarea
+              className="full"
+              name="message"
+              placeholder="Message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+
+          </div>
+
+          <button type="submit" disabled={loading}>
+            {loading ? "Submitting..." : "Submit Request"}
+          </button>
+
+        </form>
+
       </div>
-    </section>
+
+      {/* GOOGLE MAP */}
+      <div className="map">
+        <iframe
+          title="map"
+          src="https://maps.google.com/maps?q=rajahmundry&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        ></iframe>
+      </div>
+
+    </div>
+
   );
 };
 

@@ -1,0 +1,142 @@
+/* 🔷 HERO SECTION */
+.login-hero {
+  width: 100%;
+  height: 260px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+/* Overlay */
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 20, 60, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px;
+  color: #fff;
+}
+
+/* Title */
+.hero-overlay h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* Breadcrumb */
+.hero-overlay p {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* 🔷 LOGIN SECTION */
+.login-container {
+  padding: 70px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fb;
+}
+
+/* Card */
+.login-card {
+  width: 380px;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Heading */
+.login-card h2 {
+  margin-bottom: 25px;
+  color: #222;
+  font-weight: 600;
+}
+
+/* Inputs */
+.login-card input {
+  width: 90%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.2s;
+  background: #fafafa;
+}
+
+/* Input focus */
+.login-card input:focus {
+  border-color: #2f80ed;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(47, 128, 237, 0.1);
+}
+
+/* Button */
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  background: #2f80ed;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hover */
+.login-card button:hover {
+  background: #1c60c7;
+}
+
+/* Disabled */
+.login-card button:disabled {
+  background: #a0a0a0;
+  cursor: not-allowed;
+}
+
+/* Links */
+.auth-link {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.auth-link a {
+  color: #2f80ed;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.auth-link a:hover {
+  text-decoration: underline;
+}
+
+/* Spinner */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid white;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
